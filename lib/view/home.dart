@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x/main.dart';
+
 
 // ignore: must_be_immutable
 class Home extends StatelessWidget {
@@ -21,7 +23,9 @@ class Home extends StatelessWidget {
               child: MaterialButton(
                 color: Colors.red,
                 onPressed: (){
+                  sharedPref!.clear();
                   Get.offNamed('/');
+                  
                 },
                 child: Text('Sign Out'),
                 ),

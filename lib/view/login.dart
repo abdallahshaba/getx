@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x/main.dart';
 
 // ignore: must_be_immutable
 class Login extends StatelessWidget {
@@ -21,9 +22,11 @@ class Login extends StatelessWidget {
               child: MaterialButton(
                 color: Colors.blue,
                 onPressed: (){
+                  sharedPref!.setString('id', '1');
+                  //كدا اول ما اضغط علي الزر يروح يخزن القيمة اللي في المتغير الحالية
                   Get.offNamed('/home');
                 },
-                child: Text('Login' , style: TextStyle(color: Colors.white),),
+                child: const Text('Login' , style: TextStyle(color: Colors.white),),
                 ),
             )
           ],
