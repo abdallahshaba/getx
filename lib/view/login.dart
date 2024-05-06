@@ -22,11 +22,23 @@ class Login extends StatelessWidget {
               child: MaterialButton(
                 color: Colors.blue,
                 onPressed: (){
-                  sharedPref!.setString('id', '1');
+                  sharedPref!.setString("role", "user");
                   //كدا اول ما اضغط علي الزر يروح يخزن القيمة اللي في المتغير الحالية
-                  Get.offNamed('/home');
+                  Get.offNamed("home");
                 },
-                child: const Text('Login' , style: TextStyle(color: Colors.white),),
+                child: const Text('Login user' , style: TextStyle(color: Colors.white),),
+                ),
+            ),
+
+             Center(
+              child: MaterialButton(
+                color: Colors.blue,
+                onPressed: (){
+                  sharedPref!.setString("role", "admin");
+                  //كدا اول ما اضغط علي الزر يروح يخزن القيمة اللي في المتغير الحالية
+                  Get.offNamed("admin");
+                },
+                child: const Text('Login Admin' , style: TextStyle(color: Colors.white),),
                 ),
             )
           ],

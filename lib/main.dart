@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_x/middleware/auth_middleware.dart';
+import 'package:get_x/view/admin.dart';
 import 'package:get_x/view/home.dart';
 import 'package:get_x/view/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,10 +30,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         getPages: [
-        GetPage(name: '/', page: () => Login(), middlewares: [
-          AuthMiddleWare()
-        ]),
-        GetPage(name: '/home', page: () => Home(),)
+        GetPage(name: '/', page: () => const Login() , middlewares: [AuthMiddleWare()]),
+        GetPage(name: '/home', page: () => const Home(),),
+        GetPage(name: '/admin', page: () => const Admin(),)
         
         ],
         );

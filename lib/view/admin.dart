@@ -4,15 +4,15 @@ import 'package:get_x/main.dart';
 
 
 // ignore: must_be_immutable
-class Home extends StatelessWidget {
-   const Home({super.key});
+class Admin extends StatelessWidget {
+   const Admin({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("Home" , style: TextStyle(color: Colors.white),),
+        title: Text("Admin" , style: TextStyle(color: Colors.white),),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),
@@ -24,10 +24,10 @@ class Home extends StatelessWidget {
                 color: Colors.red,
                 onPressed: (){
                   sharedPref!.clear();
+                  //كدا اول ما اضغط علي الزر يروح يخزن القيمة اللي في المتغير الحالية
                   Get.offNamed("/");
-                  
                 },
-                child: Text('Sign Out'),
+                child: const Text('Sign out' , style: TextStyle(color: Colors.white),),
                 ),
             )
           ],
