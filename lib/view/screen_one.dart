@@ -13,7 +13,7 @@ class ScreenOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
        appBar: AppBar(
-        title: Text("Screen One")
+        title: const Text("Screen One1111")
       ),
       body: Center(
         child: 
@@ -24,7 +24,9 @@ class ScreenOne extends StatelessWidget {
               onPressed: (){
                 controller.incresment();
               },
-               icon: Icon(Icons.add)
+               icon: Container(
+                height: 100,
+                child: Icon(Icons.add))
                ),
 
                GetBuilder<HomeController>(
