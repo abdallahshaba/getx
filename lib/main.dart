@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/binding/myBinding.dart';
 import 'package:get_x/view/home.dart';
+import 'package:get_x/view/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-      initialBinding: MyBinding(),
+      title: 'Getx Cource',
+      theme: ThemeData(
+        primarySwatch: Colors.blue
+      ),
         debugShowCheckedModeBanner: false,
-        home: const Scaffold(
-           body: Home()
-        ));
+        initialRoute: '/',
+        getPages: [
+        GetPage(name: '/', page: () => Login(),),
+        GetPage(name: '/home', page: () => Home(),)
+        
+        ],
+        );
   }
 }

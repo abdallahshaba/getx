@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 // ignore: must_be_immutable
-class Home extends StatelessWidget {
-   const Home({super.key});
+class Login extends StatelessWidget {
+   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("Home" , style: TextStyle(color: Colors.white),),
+        title: Text("Login" , style: TextStyle(color: Colors.white),),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),
@@ -19,11 +19,11 @@ class Home extends StatelessWidget {
           children: [
             Center(
               child: MaterialButton(
-                color: Colors.red,
+                color: Colors.blue,
                 onPressed: (){
-                  Get.offNamed('/');
+                  Get.offNamed('/home');
                 },
-                child: Text('Sign Out'),
+                child: Text('Login' , style: TextStyle(color: Colors.white),),
                 ),
             )
           ],
