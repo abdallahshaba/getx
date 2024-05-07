@@ -1,38 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/main.dart';
+import 'package:get_x/services/setting_services.dart';
 
 
-// ignore: must_be_immutable
 class Home extends StatelessWidget {
-   const Home({super.key});
-
+  const Home({super.key});
   @override
   Widget build(BuildContext context) {
+    SettingServices c = Get.find();
     return Scaffold(
-       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text("Home" , style: TextStyle(color: Colors.white),),
+      appBar: AppBar(
+        title: const Text("Home Page"),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            GetX<SettingServices>(builder: (context){
+              return Center(
+              child: Text('${c.counter}' , style: TextStyle(fontSize: 30),),
+            );
+            }),
             Center(
               child: MaterialButton(
-                color: Colors.red,
                 onPressed: (){
-                  sharedPref!.clear();
-                  Get.offNamed("/");
-                  
+                  c.increase();
                 },
-                child: Text('Sign Out'),
+
+                child: Text("Counter Increase"),
+                color: Colors.blue,
                 ),
+                
+            ),
+            Center(
+              child: MaterialButton(
+                onPressed: (){
+                  c.sharedPref.clear();
+                },
+
+                child: Text("Clear Shared Preference"),
+                color: Colors.blue,
+                ),
+                
             )
           ],
         ),
-      )
-          );
+      ),
+    );
   }
 }
