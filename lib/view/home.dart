@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_x/services/setting_services.dart';
 
 
 class Home extends StatelessWidget {
   const Home({super.key});
   @override
   Widget build(BuildContext context) {
-    SettingServices c = Get.find();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home Page"),
@@ -17,15 +14,12 @@ class Home extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GetX<SettingServices>(builder: (context){
-              return Center(
-              child: Text('${c.counter}' , style: TextStyle(fontSize: 30),),
-            );
-            }),
+            Center(
+            child: Text('' , style: TextStyle(fontSize: 30),),
+                        ),
             Center(
               child: MaterialButton(
                 onPressed: (){
-                  c.increase();
                 },
 
                 child: Text("Counter Increase"),
@@ -36,7 +30,6 @@ class Home extends StatelessWidget {
             Center(
               child: MaterialButton(
                 onPressed: (){
-                  c.sharedPref.clear();
                 },
 
                 child: Text("Clear Shared Preference"),
