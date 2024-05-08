@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x/locale/local.dart';
 import 'package:get_x/view/home.dart';
 
 void main() async {
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
+      locale: Get.deviceLocale,
+      translations: MyLocal(),
       title: 'Getx Cource',
       theme: ThemeData(
         primarySwatch: Colors.blue
