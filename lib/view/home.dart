@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_x/locale/local_controoler.dart';
 
 
 class Home extends StatelessWidget {
   const Home({super.key});
   @override
   Widget build(BuildContext context) {
+    MyLocalController controller = MyLocalController();
     return Scaffold(
       appBar: AppBar(
         title:  Text('1'.tr),
@@ -17,7 +19,9 @@ class Home extends StatelessWidget {
           children: [
             Center(
               child: MaterialButton(
-                onPressed: (){},
+                onPressed: (){
+                  controller.changeLang('ar');
+                },
                 color: Colors.red,
                 child: Text("2".tr),
                 ),
@@ -25,7 +29,9 @@ class Home extends StatelessWidget {
             ),
             Center(
               child: MaterialButton(
-                onPressed: (){},
+                onPressed: (){
+                  controller.changeLang('en');
+                },
                 color: Colors.red,
                 child: Text("3".tr),
                 ),
