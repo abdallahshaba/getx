@@ -11,13 +11,12 @@ void main() async {
   sharedPref = await SharedPreferences.getInstance();
   runApp(const MyApp());
 }
-
 // ignore: must_be_immutable
 class MyApp extends StatelessWidget {
  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-  MyLocalController controller = Get.put(MyLocalController());
+    MyLocalController controller = Get.put(MyLocalController());
     return  GetMaterialApp(
       locale: controller.initialLang,
       translations: MyLocal(),

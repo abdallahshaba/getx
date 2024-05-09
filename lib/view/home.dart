@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
             Center(
               child: MaterialButton(
                 onPressed: (){
-                  controller.changeLang('ar');
+                  controller.changLang('ar');
                 },
                 color: Colors.red,
                 child: Text("2".tr),
@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
             Center(
               child: MaterialButton(
                 onPressed: (){
-                  controller.changeLang('en');
+                  controller.changLang('en');
                 },
                 color: Colors.red,
                 child: Text("3".tr),
