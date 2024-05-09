@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/locale/local_controoler.dart';
 
 
 class Home extends StatelessWidget {
   const Home({super.key});
   @override
   Widget build(BuildContext context) {
-    MyLocalController controller = MyLocalController();
     return Scaffold(
       appBar: AppBar(
-        title:  Text('1'.tr),
+        title:  Text("Home"),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),
@@ -20,23 +18,16 @@ class Home extends StatelessWidget {
             Center(
               child: MaterialButton(
                 onPressed: (){
-                  controller.changLang('ar');
+                  Get.toNamed("/pageTow" , arguments: {
+                    "name" : "Abdallah",
+                    "age" : "22",
+                  });
                 },
-                color: Colors.red,
-                child: Text("2".tr),
+                color: Colors.blue,
+                child: Text("Go To Page Two" , style: TextStyle(color: Colors.white),),
                 ),
 
             ),
-            Center(
-              child: MaterialButton(
-                onPressed: (){
-                  controller.changLang('en');
-                },
-                color: Colors.red,
-                child: Text("3".tr),
-                ),
-
-            )
           ],
         ),
       )

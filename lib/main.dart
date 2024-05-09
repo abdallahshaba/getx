@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_x/locale/local.dart';
-import 'package:get_x/locale/local_controoler.dart';
 import 'package:get_x/view/home.dart';
+import 'package:get_x/view/page_tow.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences? sharedPref;
@@ -16,16 +15,17 @@ class MyApp extends StatelessWidget {
  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    MyLocalController controller = Get.put(MyLocalController());
     return  GetMaterialApp(
-      locale: controller.initialLang,
-      translations: MyLocal(),
+      initialRoute: '/',
       title: 'Getx Cource',
       theme: ThemeData(
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.blue,
       ),
+      getPages: [
+        GetPage(name: '/', page: ()=> const Home()),
+        GetPage(name: '/pageTow', page: ()=> const PageTow())
+        ],
         debugShowCheckedModeBanner: false,
-        home: Home(),
         );
   }
 }
