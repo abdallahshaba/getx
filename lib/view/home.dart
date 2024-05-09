@@ -18,13 +18,14 @@ class Home extends StatelessWidget {
             Center(
               child: MaterialButton(
                 onPressed: (){
-                  Get.toNamed("/pageTow" , arguments: {
-                    "name" : "Abdallah",
-                    "age" : "22",
-                  });
+                  if(Get.isDarkMode){
+                    Get.changeTheme(ThemeData.light());
+                  } else {
+                    Get.changeTheme(ThemeData.dark());
+                  }
                 },
                 color: Colors.blue,
-                child: Text("Go To Page Two" , style: TextStyle(color: Colors.white),),
+                child: Text("Change Theme" , style: TextStyle(color: Colors.white),),
                 ),
 
             ),
