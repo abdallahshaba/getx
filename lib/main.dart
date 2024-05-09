@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return  GetMaterialApp(
       initialRoute: '/',
       title: 'Getx Cource',
-      theme: ThemeData.dark(),
+      theme: AppTheme.lightTheme,
       getPages: [
         GetPage(name: '/', page: ()=> const Home()),
         GetPage(name: '/pageTow', page: ()=> const PageTow())

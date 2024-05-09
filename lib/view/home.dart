@@ -19,9 +19,9 @@ class Home extends StatelessWidget {
               child: MaterialButton(
                 onPressed: (){
                   if(Get.isDarkMode){
-                    Get.changeTheme(ThemeData.light());
+                    Get.changeTheme(AppTheme.lightTheme);
                   } else {
-                    Get.changeTheme(ThemeData.dark());
+                    Get.changeTheme(AppTheme.darkTheme);
                   }
                 },
                 color: Colors.blue,
@@ -35,3 +35,15 @@ class Home extends StatelessWidget {
     );
   }
 }
+
+   class AppTheme { 
+    static ThemeData darkTheme = ThemeData.dark().copyWith(
+      appBarTheme: AppBarTheme(
+        color: Colors.white
+      ),
+    );
+    static ThemeData lightTheme = ThemeData.light().copyWith(
+      appBarTheme: AppBarTheme(
+        color: Colors.red,
+      ));
+   }
